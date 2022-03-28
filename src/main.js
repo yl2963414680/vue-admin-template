@@ -27,6 +27,10 @@ if (process.env.NODE_ENV === 'production') {
   const { mockXHR } = require('../mock')
   mockXHR()
 }
+// 引入全局组件
+// 三级联动组件
+import CategorySelect from '@/components/CategorySelect';
+Vue.component(CategorySelect.name,CategorySelect)
 
 // set ElementUI lang to EN
 Vue.use(ElementUI, { locale })
@@ -37,7 +41,6 @@ Vue.config.productionTip = false
 
 import API from '@/api';
 Vue.prototype.$API = API;
-console.log(Vue.prototype.$API);
 new Vue({
   el: '#app',
   router,
